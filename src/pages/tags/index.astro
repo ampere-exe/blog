@@ -7,41 +7,46 @@ import Layout from '@/layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
 import { getCollection } from 'astro:content'
 
-const blog = (await getCollection('blog')).filter((post) => !post.data.draft)
+// Load blog posts and projects
+const blogPosts = (await getCollection('blog')).filter((post) => !post.data.draft)
+const projectPosts = (await getCollection('projects')).filter((post) => !post.data.draft)
 
-const tagCounts = blog.reduce((acc, post) => {
+// Combine posts from both collections
+const allPosts = [...blogPosts, ...projectPosts]
+
+// Create a Map to count occurrences of each tag
+const tagCounts = allPosts.reduce((acc, post) => {
   post.data.tags?.forEach((tag) => {
     acc.set(tag, (acc.get(tag) || 0) + 1)
   })
   return acc
 }, new Map())
 
+// Create a sorted list of tags based on count and alphabetical order
 const tags = [...tagCounts.keys()].sort((a, b) => {
   const countDiff = tagCounts.get(b)! - tagCounts.get(a)!
   return countDiff !== 0 ? countDiff : a.localeCompare(b)
 })
 ---
 
-<Layout title="Tags" description="A list of all tags used in blog posts">
+<Layout title="Tags" description="A list of all tags used in blog posts and projects">
   <Container class="flex flex-col gap-y-6">
     <Breadcrumbs items={[{ label: 'Tags', icon: 'lucide:tags' }]} />
 
     <div class="flex flex-col gap-4">
       <div class="flex flex-wrap gap-2">
-        {
-          tags.map((tag) => (
-            <Link
-              href={`/tags/${tag}`}
-              class={badgeVariants({ variant: 'secondary' })}
-            >
-              <Icon name="lucide:hash" class="size-3 -translate-x-0.5" />
-              {tag}
-              <span class="ml-1.5 text-muted-foreground">
-                ({tagCounts.get(tag)})
-              </span>
-            </Link>
-          ))
-        }
+        {tags.map((tag) => (
+          <Link
+            href={`/tags/${tag}`}
+            class={badgeVariants({ variant: 'secondary' })}
+          >
+            <Icon name="lucide:hash" class="size-3 -translate-x-0.5" />
+            {tag}
+            <span class="ml-1.5 text-muted-foreground">
+              ({tagCounts.get(tag)})
+            </span>
+          </Link>
+        ))}
       </div>
     </div>
   </Container>
