@@ -77,7 +77,7 @@ const authors = await parseAuthors(entry.data.authors ?? [])
       {
         entry.data.tags && (
           <div class="flex flex-wrap gap-2">
-            {entry.data.tags.map((tag) => (
+            {entry.data.tags.map((tag:any) => (
               <Badge variant="secondary">{tag}</Badge>
             ))}
           </div>
