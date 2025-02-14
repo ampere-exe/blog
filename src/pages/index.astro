@@ -2,6 +2,7 @@
 import BlogCard from '@/components/BlogCard.astro'
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
+import AvatarComponent from '@/components/ui/avatar'
 import { buttonVariants } from '@/components/ui/button'
 import {
   Card,
@@ -12,8 +13,8 @@ import {
 } from '@/components/ui/card'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
+import { cn } from '@/lib/utils'
 import { getCollection } from 'astro:content'
-
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -25,49 +26,28 @@ const blog = (await getCollection('blog'))
     <section>
       <Card>
         <CardHeader>
-          <CardTitle className="text-3xl">er·u·dite</CardTitle>
-          <CardDescription
-            >/ˈer(y)əˌdīt/ &bull; <span class="font-semibold">adjective</span
+          <CardTitle className="text-3xl">About Me</CardTitle>
+          <AvatarComponent
+            client:load
+            src="public/Chakarov.png"
+            alt="Avatar"
+            className={cn('size-32 rounded-md')}
+          />
+          <CardDescription>
+            <span class="text-xs"
+              >This is not me &bull; It's weightlifter Ivan Chakarov</span
             ></CardDescription
           >
         </CardHeader>
         <CardContent>
-          <p class="mb-2 text-sm text-muted-foreground">
-            astro-erudite is an opinionated, no-frills static blogging template
-            built with <Link
-              href="https://astro.build"
-              class="text-foreground"
-              external
-              underline>Astro</Link
-            >, <Link
-              href="https://tailwindcss.com"
-              class="text-foreground"
-              external
-              underline>Tailwind</Link
-            >, and <Link
-              href="https://ui.shadcn.com"
-              class="text-foreground"
-              external
-              underline>shadcn/ui</Link
-            >. Extraordinarily loosely based on the <Link
-              href="https://astro-micro.vercel.app/"
-              class="text-foreground"
-              external
-              underline>Astro Micro</Link
-            > theme.
+          <p class="mb-2 text-pretty text-sm">
+            Hey, my name is Zuhair Emaz and i'm an aspiring computer engineer
+            from Canada who's also an avid weightlifting enthusiast.
           </p>
-          <p class="text-sm text-muted-foreground">
-            To use this template, check out the <Link
-              href="https://github.com/jktrn/astro-erudite"
-              class="text-foreground"
-              underline
-              external>GitHub</Link
-            > repository. To learn more about why this template exists, read this
-            blog post: <Link
-              href="/blog/the-state-of-static-blogs"
-              class="text-foreground"
-              underline>The State of Static Blogs in 2024</Link
-            >.
+          
+          <p class="mb-2 text-pretty text-sm">
+            These past few years i've simply been thinking and dreaming--of course to no avail--but as of this
+            moment, I would like to finally bring my ideas to life.
           </p>
         </CardContent>
       </Card>
