@@ -18,7 +18,7 @@ export const SITE: Site = {
     'ampere_exe is a blog where you can discover new things!',
   EMAIL: 'jason@enscribe.dev',
   NUM_POSTS_ON_HOMEPAGE: 2,
-  POSTS_PER_PAGE: 5,
+  POSTS_PER_PAGE: 1,
   SITEURL: 'https://astro-erudite.vercel.app',
 }
 
