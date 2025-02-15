@@ -16,10 +16,10 @@ export const SITE: Site = {
   TITLE: 'ampere_exe',
   DESCRIPTION:
     'ampere_exe is a blog where you can discover new things!',
-  EMAIL: 'jason@enscribe.dev',
+  EMAIL: 'zuhair.emaz@gmail.com',
   NUM_POSTS_ON_HOMEPAGE: 2,
   POSTS_PER_PAGE: 5,
-  SITEURL: 'https://astro-erudite.vercel.app',
+  SITEURL: 'https://ampere-exe.netlify.app/',
 }
 
 export const NAV_LINKS: Link[] = [
@@ -29,8 +29,7 @@ export const NAV_LINKS: Link[] = [
 ]
 
 export const SOCIAL_LINKS: Link[] = [
-  { href: 'https://github.com/jktrn', label: 'GitHub' },
-  { href: 'https://twitter.com/enscry', label: 'Twitter' },
-  { href: 'jason@enscribe.dev', label: 'Email' },
+  { href: 'https://github.com/ampere-exe', label: 'GitHub' },
+  { href: 'zuhair.emaz@gmail.com', label: 'Email' },
   { href: '/rss.xml', label: 'RSS' },
 ]
