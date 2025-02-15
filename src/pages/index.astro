@@ -15,12 +15,21 @@ import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { cn } from '@/lib/utils'
 import { getCollection } from 'astro:content'
-const blog = (await getCollection('blog'))
-  .filter((post:any) => !post.data.draft)
-  .sort((a:any, b:any) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
----
 
+// Fetch both blog and projects collections
+const blogPosts = await getCollection('blog')
+const projectPosts = await getCollection('projects')
+
+// Combine the posts arrays and sort them by date (newest first)
+const posts = [...blogPosts, ...projectPosts]
+  .filter((post: any) => !post.data.draft)
+  .sort((a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
+
+// If you have a combined route for all posts, set it here.
+// Otherwise, you might need to decide which one to link to.
+const baseUrl = '/blog'
+---
 <Layout title="Home" description={SITE.DESCRIPTION}>
   <Container class="flex flex-col gap-y-6">
     <section>
@@ -34,19 +43,18 @@ const blog = (await getCollection('blog'))
             className={cn('size-32 rounded-md')}
           />
           <CardDescription>
-            <span class="text-xs"
-              >This is not me &bull; It's weightlifter Ivan Chakarov</span
-            ></CardDescription
-          >
+            <span class="text-xs">
+              This is not me &bull; It's weightlifter Ivan Chakarov
+            </span>
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <p class="mb-2 text-pretty text-sm">
-            Hey, my name is Zuhair Emaz and i'm an aspiring computer engineer
+            Hey, my name is Zuhair Emaz and I'm an aspiring computer engineer
             from Canada who's also an avid weightlifting enthusiast.
           </p>
-          
           <p class="mb-2 text-pretty text-sm">
-            These past few years i've simply been thinking and dreaming--of course to no avail--but as of this
+            These past few years I've simply been thinking and dreaming—of course, to no avail—but as of this
             moment, I would like to finally bring my ideas to life.
           </p>
         </CardContent>
@@ -55,23 +63,18 @@ const blog = (await getCollection('blog'))
     <section class="flex flex-col gap-y-4">
       <h2 class="text-2xl font-bold">Latest posts</h2>
       <ul class="not-prose flex flex-col gap-y-4">
-        {
-          blog.map((post:any) => (
-            <li>
-              <BlogCard entry={post} />
-            </li>
-          ))
-        }
+        {posts.map((post: any) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))}
       </ul>
       <div class="flex justify-center">
         <Link
-          href="/blog"
+          href={baseUrl}
           class={buttonVariants({ variant: 'ghost' }) + ' group'}
         >
-          See all posts <span
-            class="ml-1.5 transition-transform group-hover:translate-x-1"
-            >&rarr;</span
-          >
+          See all posts <span class="ml-1.5 transition-transform group-hover:translate-x-1">&rarr;</span>
         </Link>
       </div>
     </section>
