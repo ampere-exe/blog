@@ -30,6 +30,7 @@ const posts = [...blogPosts, ...projectPosts]
 // Otherwise, you might need to decide which one to link to.
 const baseUrl = '/blog'
 ---
+
 <Layout title="Home" description={SITE.DESCRIPTION}>
   <Container class="flex flex-col gap-y-6">
     <section>
@@ -51,11 +52,19 @@ const baseUrl = '/blog'
         <CardContent>
           <p class="mb-2 text-pretty text-sm">
             Hey, my name is Zuhair Emaz and I'm an aspiring computer engineer
-            from Canada who's also an avid weightlifting enthusiast.
+            from Canada with a passion for making things (or making things
+            better). I go by my alias ampere_exe (or .exe, -exe)
           </p>
           <p class="mb-2 text-pretty text-sm">
-            These past few years I've simply been thinking and dreaming—of course, to no avail—but as of this
-            moment, I would like to finally bring my ideas to life.
+            Outside of that, I'm fully dedicated to weightlifting. In terms of
+            activities which are not physical in nature, I greatly enjoy
+            reading, playing video games (sometimes), watching movies,
+            programming, writing, and... eating!
+          </p>
+          <p class="mb-2 text-pretty text-sm">
+            These past few years I've simply been thinking and dreaming—of
+            course, to no substance—but as of this moment, I would like to
+            finally bring my ideas to life.
           </p>
         </CardContent>
       </Card>
@@ -63,18 +72,23 @@ const baseUrl = '/blog'
     <section class="flex flex-col gap-y-4">
       <h2 class="text-2xl font-bold">Latest posts</h2>
       <ul class="not-prose flex flex-col gap-y-4">
-        {posts.map((post: any) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))}
+        {
+          posts.map((post: any) => (
+            <li>
+              <BlogCard entry={post} />
+            </li>
+          ))
+        }
       </ul>
       <div class="flex justify-center">
         <Link
           href={baseUrl}
           class={buttonVariants({ variant: 'ghost' }) + ' group'}
         >
-          See all posts <span class="ml-1.5 transition-transform group-hover:translate-x-1">&rarr;</span>
+          See all posts <span
+            class="ml-1.5 transition-transform group-hover:translate-x-1"
+            >&rarr;</span
+          >
         </Link>
       </div>
     </section>
