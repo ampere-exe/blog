@@ -18,7 +18,7 @@ export const SITE: Site = {
     'ampere_exe is a blog where you can discover new things!',
   EMAIL: 'zuhair.emaz@gmail.com',
   NUM_POSTS_ON_HOMEPAGE: 2,
-  POSTS_PER_PAGE: 5,
+  POSTS_PER_PAGE: 4,
   SITEURL: 'https://ampere-exe.netlify.app/',
 }
 
