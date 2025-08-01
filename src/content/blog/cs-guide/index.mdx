@@ -6,13 +6,14 @@ tags: ['guide','computer science', 'CS30 IB']
 image: './bg3.png'
 authors: ['ampere']
 ---
+import Callout from '@/components/Callout.astro'
 
 ## Topic 1: Introduction
 
 For some context, this guide was written because my peers and I found our journey through CS30 IB to be difficult and overwhelming as a result of the limited resources and
 unclear information surrounding the course. This was written with the intention to help some of you out, to get the ball rolling, so that theres a clear framework on how to 
-approach the course effectively. There is no guarantee that this guide is perfect--it's likely to contain several errors--but most of the information has been presented through
-personal experience and research so as to aid in your completion of the course. 
+approach the course effectively. <Callout variant="warning">There is no guarantee that this guide is perfect--it's likely to contain several errors--but most of the information has been presented through
+personal experience and research so as to aid in your completion of the course. </Callout>
 
 ### 1.1: What is the Internal Assessment
 
@@ -34,12 +35,17 @@ but generally there isn't as much freedom.
 
 You can have a close friend (or even yourself) be a client, but it's highly recommended against. IB has a record of marking lower on projects with these types of clients.
 
-Also, please do not accept a request for a highly complex project as it will only make your life harder. There is more on this topic
-to be discussed, but IB markers don't care about the complexity of your program itself. They mostly care about how complex you make the program seem 
+<Callout variant="danger">
+Please do not accept a request for a highly complex project as it will only make your life harder. 
+
+There is more on this topic to be discussed, but IB markers don't care about the complexity of your program itself. They mostly care about how complex you make the program seem 
 on your writeup. With this in mind, accept a project with a simple set of features and instead use extensive techniques (complex algorithms and data structures) to 
 expand on your code. 
+</Callout>
 
-It's extremely advised to find a client within the first 2 weeks of school to allow time for Planning.
+<Callout variant="tip">
+It's extremely advised to find a client within the first 2 weeks of school to allow time for planning and Section A.
+</Callout>
 ### 1.4: Timeline
 
 Your teacher will give you general due dates on when certain parts of your IA are due. It's important to adhere to these due dates if possible, especially near the end 
@@ -53,11 +59,75 @@ The general timeline is as follows:
 | December–January    | Learning Advanced Concepts and Section C               |
 | February            | Section D and Section E              |
 
+<Callout title="Late stage planning risk"variant="warning">
 Your IA will be due in sometime after February, likely March or April, however, it is *highly* recommended that you hand it in by late february or early March at the latest.
 You will likely be much busier at this time and the addition of extra content to your writeup or project will net diminishing returns. 
+</Callout>
 ## Topic 2: Writeup Guide
+This section is only meant to serve as a guide, not a step by step tutorial, so essential points are kept concise. A general overview of 
+what to expect for each section will be given by your teacher. 
+
+<Callout variant="important">
+Make sure you follow your teacher given exemplars religiously. This is very important. 
+</Callout>
+### 2.1: Writeup Tips
+- It's recommended to use Times New Roman or Arial. Size 12, 15, and 18 for normal text, small heading, and large heading respectively.
+Its important to keep this consistent among all sections.
+- Keep all your writeup files in a folder within your Google Drive to stay organized.
+- Sections should be named "Crit_X_Y", where X is a letter and Y is the section name (example: Crit_A_Planning). Appendices should be named Appendix_A and Appendix_B. 
+- Always keep referring back to your client conversations in your appendix constantly throughout all sections. In your document, it should look like "(Conversation X, Appendix Y)" where X is a number and 
+Y is a letter (example: Conversation 1, Appendix B). It's important to note that references to your appendix are not considered towards your word count. 
+- After handing in your specific section to your teacher on classroom, follow their commented advice religiously. Look through each point of feedback and fix whatever they feel is wrong. 
+
+### 2.2: Section A
+<Callout variant="note">
+Section A is meant to be short and completed within the first month of the school year. This is your chance to get some easy marks. 
+</Callout>
+
+For your scenario, talk concisely about your clients problem, what solutions they tried previously, and a vague description of what they want--including features and type of application.
+Refer back to your appendix as much as possible here. 
+
+For your rationale, talk about what application you're making, what features it will have, and what technologies/frameworks you are using to accomplish it (and why those certain frameworks are being used).
+
+Your success criteria should consist of 7 bullet points--no more and no less. All bullets must concise and relate to each feature that your client wants. 
+
+### 2.3: Section B 
+
+Section B is more difficult, especially since you likely won't have a clue on the structure of your program. Therefore, it's recommended to do a couple parts of section B and add more as you
+finish developing. This consists of adding vague structure based diagrams that don't require you to have started coding. 
+
+Your "Test Plan" should be a copy paste of your requirements from Section A, with your test plan steps being your process to check if each requirement is met. Be as specific as possible. 
+
+<Callout title="Good vs bad test plans" variant="example">
+A bad example of a test plan is the following: 
+- "Try adding an item and see if it shows up on my web page." 
+
+A good example of a test plan is the following: 
+- "Log in as the client and navigate to the catalogue
+page. Attempt to add a new item, such as a 'Caliper' and observe if the item appears instantly in the inventory list with all entered details. Modify the item by updating fields like quantity,
+and confirm that the change is immediately reflected in the list. Finally, delete the item and check that it is fully removed from the inventory."
+</Callout>
+
+Some diagrams to include in Section B (you can put much more than just these): 
+| Before Development               |After Development                    |
+|----------------------------------|-----------------------------------------|
+| UI Mock Ups                      | UML Class Diagram (if applicable)       |
+| Context Diagram                  | Algorithm Flowchart                     |
+| Top Down Diagram                 |                                         |
+| System Flowchart                 |                                         |
+
+<Callout title="Section B efficiency" variant="tip">
+As of writing, these were the only diagrams I put on my IA, with minimal effort, and managed to get the same mark as some of my other peers (who spent significantly more time). 
+Section B is not worth spending as much time on as it may seem. It's important to focus on quality over quantity here. All diagrams should be comprehensive, easy to see, and well structured. 
+</Callout>
+### 2.4: Section C 
+
+### 2.5: Section D
+
+### 2.6: Section E
 
 ## Topic 3: Development Roadmap
 
 ## Topic 4: Tips and Advice
+
 
