@@ -1,14 +1,14 @@
 ---
 title: 'CS30 IB Internal Assessment Guide'
 description: "A guideline on learning about and managing the CS30 IB Internal Assessment."
-date: 2025-08-01
+date: 2025-08-15
 tags: ['guide','computer science', 'CS30 IB']
 image: './bg3.png'
 authors: ['ampere']
 ---
 import Callout from '@/components/Callout.astro'
 
-# Topic 1: Introduction
+# Part 1: Introduction
 
 For some context, this guide was written because my peers and I found our journey through CS30 IB to be difficult and overwhelming as a result of the limited resources and
 unclear information surrounding the course. This was written with the intention to help some of you out, to get the ball rolling, so that theres a clear framework on how to 
@@ -63,7 +63,7 @@ The general timeline is as follows:
 Your IA will be due in sometime after February, likely March or April, however, it is *highly* recommended that you hand it in by late february or early March at the latest.
 You will likely be much busier at this time and the addition of extra content to your writeup or project will net diminishing returns. 
 </Callout>
-# Topic 2: Writeup Guide
+# Part 2: Writeup Guide
 This section is only meant to serve as a guide, not a step by step tutorial, so essential points are kept concise. A general overview of 
 what to expect for each section will be given by your teacher. 
 
@@ -194,212 +194,16 @@ APA format. This should be similar if not the same to your references in Section
 Appendix B is mostly going to contain transcripts of your client conversations. You can put any other relevant information that you want the IB markers to refer back in this 
 Appendix. 
 
-# Topic 3: Development Roadmap
+# Part 3: Development Roadmap
 
 During the planning stages of your IA, the distinction should be made that Web Development is the most efficient route to take in order to get a high mark without investing
 too much time into your project. As such, the first section of the roadmap will deal exclusively with Web Development. 
 
 However, it's important to discern whether your product should be a website in the first place or if it's more appropriate to create a local application (like a Windows program). 
-This guide won't cover how to create local desktop applications as it's impractical in most cases for an IA, but if you want to anyhow, the internet is a great place to start. 
+This guide won't cover how to create local desktop applications as it's uncommon in most cases for an IA (and often too time consuming), but if you want to anyhow, the internet 
+is a great place to start. 
 
-## 3.1: Web Development
-
-Before you start learning the basics of Web Development you need to sharpen your axe and understand how a website and its individual parts work. 
-
-Most web applications consist of a frontend and backend, where the frontend consists of a GUI while the backend encompasses all processes and components that 
-operate behind the scenes (generally a server and a database). It's recommended to watch these 2 videos to learn what each of those are and their roles in a web application:  
-<div className="flex mb-5 gap-5">
-    <iframe
-    width="320"
-    height="180"
-    src="https://www.youtube.com/embed/WG5ikvJ2TKA?si=k2PhIN80bahhSVhZ" 
-    title="YouTube video player"
-    frameBorder="0"
-    align="middle"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    ></iframe>
-    <iframe
-    width="320"
-    height="180"
-    src="https://www.youtube.com/embed/XBu54nfzxAQ?si=tF6l-fW1VAhmBVoJ"
-    title="YouTube video player"
-    frameBorder="0"
-    align="middle"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    ></iframe>
-</div>
-
-To start, it's recommended to download an IDE/text editor--the place where you'll be writing all your code. Most people should use VSCode ([Download](https://code.visualstudio.com/download)).
-
-### 3.1.1: Fundamentals
-After this you can start learning. One of the most exceptional things about Web Dev is the sheer amount of resources available online to learn about the subject. As such, you can learn
-the fundamentals of Web Dev through an incredible open source resource: [The Odin Project](https://www.theodinproject.com/paths/foundations/courses/foundations).
-
-To learn HTML, CSS, and Javascript, the basis of all Web Development, all you need to do is complete--in it's entirety--the "Foundations Course" of The Odin Project.
-It will help you start with Git as a method of version control, teach basic terminal commands, HTML, CSS, and Javascript in an easy to follow manner. 
-
-<Callout title="Warning on completing exercises" variant="important">
-It's important that you complete **all** of the exercises--including projects--to make sure that you truly understand the material taught and are able to utilize it. Without doing so,
-it will be extremely difficult, if not impossible, to move forward in learning more difficult things later on.
-
-<Callout variant="summary">
-Do your exercises!
-</Callout>
-</Callout>
-
-Once you finish the foundations course, there is more flexibility on what to do. The Odin Project will allow you to choose two paths, and it's up to you what to choose, but it's recommended
-to start the "Full Stack Javascript" route. Most of this part of the guide will focus on Javascript based Web Dev instead of something like Python and Ruby.
-
-However, it's not recommended to go through everything in that course as it's redundant in most cases. If you have time, feel free to do so as the resources are excellent.
-
-### 3.1.2: The Frontend
-For most developers, just HTML, CSS, and pure Javascript might be tedious to use. In such cases, we employ the use of frameworks.
-
-<Callout title="Framework" variant="definition">
-A web framework often referred to as a web application framework is a pre-built set of libraries, software tools, and best practices that support the overall software development 
-of web apps.
-</Callout>
-
-There are a plethora of frameworks and libraries to use and the one you use is up to you.  
-Here is a table of common JavaScript frameworks/libraries:
-
-| Framework/Library | Type          | Description                                                                 |
-|-------------------|--------------|-----------------------------------------------------------------------------|
-| React             | Library      | A UI library for building component-based user interfaces.                  |
-| Vue.js            | Framework    | A progressive framework for building user interfaces and single-page apps. |
-| Angular           | Framework    | A full-featured framework for building large-scale web applications.        |
-| Svelte            | Compiler     | A compiler that converts declarative components into highly efficient JS.  |
-| Next.js           | Framework    | A React framework for server-side rendering and static site generation.     |
-| Nuxt.js           | Framework    | A Vue framework for server-side rendering and static site generation.       |
-| Express.js        | Framework    | A minimal and flexible Node.js web application framework.                   |
-| jQuery            | Library      | A fast, small, and feature-rich JavaScript library for DOM manipulation.    |
-
-If you don't know where to start, it's highly recommended to learn and use [React](https://react.dev/) for ease of use and popularity.
-
-To get started with React, follow The Odin Project's React Course. Here you will learn to setup [Vite](https://vite.dev/), a fast front end development tool, and learn the basics of React.
-
-At the very least, the introduction portion of the React Course is recommended. If you are seeking a more visual and hands on approach, [Scrimba](https://scrimba.com/learn-react-c0e) is 
-an absolutely incredible resource that allows you apply what you learned immediately in it's own website through interactive coding exercises. However, it falls short sometimes
-when it comes to volume of content. It's highly recommended to read up on missing parts in the Odin Project React course, as well as the official React Documentation.  
-
-You should also be browsing some other frameworks and libraries you'd like to use in your project. Here are some commonly recommended ones and what they do:
-
-| Category      | Library / Tool   | Description                                   |
-|---------------|-----------------|-----------------------------------------------|
-| Styling / UI  | Tailwind CSS     | Utility-first CSS framework                   |
-| Styling / UI  | DaisyUI          | Tailwind plugin with prebuilt components     |
-| Styling / UI  | ShadCN           | Tailwind + Radix UI component library        |
-| State         | Redux            | Centralized state management                 |
-| State         | Zustand          | Minimalist state management for React        |
-| API / Fetch   | Axios            | Promise-based HTTP client                     |
-| API / Fetch   | React Query      | Server state management and caching          |
-| Animation     | Framer Motion    | Animations for React                          |
-| Utilities     | Lodash           | Collection of utility functions               |
-| Utilities     | Day.js           | Date manipulation                              |
-
-These are only a few that you can use. If you want to find anything specific you can look for it. 
-
-The minimum i'd recommend are the following:
-- [Tailwind CSS](https://tailwindcss.com/) (In my opinion, mandatory)
-- A UI library: [DaisyUI](https://daisyui.com/) and [ShadCN](https://ui.shadcn.com/) are highly recommended
-- [Typescript](https://www.typescriptlang.org/)
-
-<Callout title="IA start time" variant="note">
-At this point you should be starting to create your IA project.
-</Callout>
-### 3.1.3: The Backend
-
-Once you have a good grasp of Frontend Web Development, it's time to start learning about Backend Web Development. 
-
-<Callout title="Should you have a backend?" variant="important">
-It may be the case that your application doesn't need a backend, but if you want a high mark in your IA, it's highly recommended to integrate some sort of backend or database 
-to show complexity. 
-</Callout>
-
-In most web applications, the backend consists of a server and a database. The database stores all the information used by the application while the server takes 
-responsibility for routing and moving information between the front end and database. 
-
-However, even if this is the case for most applications, it's much easier and more time efficient to use a BaaS that does everything for you. Moreover, it's 
-usually simpler to host (we'll cover this more later). However, if you want more control over your backend, you might stick to choosing your own server side language and database.
-
-If you choose the latter, The Odin Project can help you start learning how to use Node.js alongside PostgreSQL. If in doubt, check their respective documentation.
-
-When choosing a BaaS there are some distinctions to make. The two main ones recommended are [Firebase](https://firebase.google.com/) and [Supabase](https://supabase.com/), but the one you use is up to you.
-
-You can use the following table to help you make the decision:
-
-| Feature       | Firebase (Google)                     | Supabase (Open Source)           |
-|---------------|---------------------------------------|-----------------------------------|
-| Database      | NoSQL (Firestore, Realtime DB)         | SQL (PostgreSQL)                  |
-| API           | Client SDKs, REST                      | REST, GraphQL, client libraries   |
-| Auth          | Built-in                               | Built-in                          |
-| Real-time     | Yes                                    | Yes                               |
-| Hosting       | Yes                                    | No (DB + APIs only)               |
-| Open Source   | No                                     | Yes                               |
-| Pricing       | Usage-based, can scale up costs        | Usage-based, can scale up costs   |
-| Vendor Lock   | High                                   | Medium                            |
-
-
-Firebase is recommended if you need your backend to work on the fly without much intervention, but Supabase is my personal recommendation as it's more flexble and open source.
-You can't go wrong with etiher of these so watch these videos to learn more about each and pick the one you like:
-
-<div className="flex mb-5 gap-5">
-    <iframe
-    width="320"
-    height="180"
-    src="https://www.youtube.com/embed/vAoB4VbhRzM?si=xK1Qhzndei4BkFtV" 
-    title="YouTube video player"
-    frameBorder="0"
-    align="middle"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    ></iframe>
-    <iframe
-    width="320"
-    height="180"
-    src="https://www.youtube.com/embed/zBZgdTb-dns?si=Y4TbFbpORAdoKKiS"
-    title="YouTube video player"
-    frameBorder="0"
-    align="middle"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-    ></iframe>
-</div>
-
-To learn each of these, simply visit their respective documentation. 
-### 3.1.4: Deployment 
-
-When creating a web application, you'll generally want somewhere to host a website so that people can view it through a domain. 
-
-Some free hosting services include the following:
-
-| Service   | Type                  | Free Tier Limits                                | Notes                                  |
-|-----------|-----------------------|-------------------------------------------------|----------------------------------------|
-| Vercel    | Frontend hosting, SSR | 125 GB bandwidth/month, 1 GB storage            | Great for Next.js, instant deployments |
-| Render    | Full-stack hosting    | 750 compute hours/month, free PostgreSQL (limited) | Supports web services & static sites   |
-| Netlify   | Frontend hosting, CI  | 125 GB bandwidth/month, 300 build minutes       | Strong JAMstack support                |
-| GitHub Pages | Static site hosting   | Unlimited bandwidth for public repos            | Only for static content                 |
-| Cloudflare Pages | Static site hosting   | Unlimited requests & bandwidth                  | Free CDN, great for performance         |
-| Railway   | Full-stack hosting    | $5/month free credit (~500 compute hours)       | Auto-deploy from Git, DB support        |
-| Fly.io    | Full-stack hosting    | 3 shared CPUs, 256 MB RAM, 3 GB storage         | Good for Docker apps                    |
-
-Generally, it's recommended to use [Vercel](https://vercel.com) as it's easy to interface. However, the other options are all very viable so use the one that you find is most appropriate.
-
-<Callout title="Avoiding deployment errors" variant="tip"> 
-Some deployment services have errors when deploying as a result of their respective processes. It's highly recommended that you either make sure that your GitHub
-application deploys seamlessly from the get go, or to use a template (from Vercel) and build your product off of it.  
-
-This will prevent deployment headaches later on.
-</Callout>
-
-To deploy your project, simply follow the instructions displayed by your selected service.
-
-## 3.2: Game Development 
-
-## 3.3: Mobile Development 
-
-# Topic 4: Tips and Advice
+[Read the Web Dev Roadmap](/blog/cs-guide/web-dev). 
+# Part 4: Tips and Advice
 
 
