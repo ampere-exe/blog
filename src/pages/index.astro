@@ -6,7 +6,8 @@ import { buttonVariants } from '@/components/ui/button'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getRecentPosts } from '@/lib/data-utils'
-
+import Image from 'astro/components/Image.astro'
+import logo from '../../public/Chakarov.png'
 const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
@@ -15,48 +16,35 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
   <section>
     <div class="rounded-lg border">
       <div class="flex flex-col space-y-1.5 p-6">
-        <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
-        <p class="text-muted-foreground text-sm">
-          /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
-        </p>
+        <div class="flex justify-center">
+          <h3 class="text-4xl leading-none font-medium">About Me</h3>
+        </div>
+        <div class="flex justify-center">
+          <Image src={logo} alt="Logo" class="rounded-md sm:size-36" />
+        </div>
+        <div class="flex justify-center">
+          <span class="text-muted-foreground text-xs"
+            >Image Courtesy: Weightlifter Ivan Chakarov &bull; Ironmind 1993
+            Worlds Training Hall Highlight</span
+          >
+        </div>
       </div>
       <div class="p-6 pt-0">
-        <p class="text-muted-foreground mb-2 text-sm">
-          astro-erudite is an opinionated, unstyled static blogging template
-          built with <Link
-            href="https://astro.build"
-            class="text-foreground"
-            external
-            underline>Astro</Link
-          >, <Link
-            href="https://tailwindcss.com"
-            class="text-foreground"
-            external
-            underline>Tailwind</Link
-          >, and <Link
-            href="https://ui.shadcn.com"
-            class="text-foreground"
-            external
-            underline>shadcn/ui</Link
-          >. Extraordinarily loosely based on the <Link
-            href="https://astro-micro.vercel.app/"
-            class="text-foreground"
-            external
-            underline>Astro Micro</Link
-          > theme.
+        <p class="text-md mb-2">
+          My name is Zuhair Emaz and i'm an aspiring engineer from Canada. I
+          also go by my alias ampere_exe.
         </p>
-        <p class="text-muted-foreground text-sm">
-          To use this template, check out the <Link
-            href="https://github.com/jktrn/astro-erudite"
-            class="text-foreground"
-            underline
-            external>GitHub</Link
-          > repository. To learn more about why this template exists, read this blog
-          post: <Link
-            href="/blog/the-state-of-static-blogs"
-            class="text-foreground"
-            underline>The State of Static Blogs in 2024</Link
-          >.
+        <p class="text-pretty text-md mb-2">
+          Outside of being a student, i'm also a strength athlete who's
+          interested in Olympic Weightlifting, Powerlifting, and
+          Bodybuilding. To put it simply, if I wasn't allowed to become an engineer—and I was talented enough—I 
+          would probably want to be a professional weightlifter.
+        </p>
+        <p class="text-md mb-2">
+          Although i'm usually busy, in my free time I enjoy reading, writing, programming, cooking, and
+          playing videogames (sometimes). This blog is mainly for me to write and share about my thoughts and
+          ideas—to convey both the magic of computers, and the beauty of weightlifting—so that everyone can
+          appreciate their intricacies.
         </p>
       </div>
     </div>
