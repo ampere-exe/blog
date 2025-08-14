@@ -1,35 +1,51 @@
-export type Site = {
-  TITLE: string
-  DESCRIPTION: string
-  EMAIL: string
-  NUM_POSTS_ON_HOMEPAGE: number
-  POSTS_PER_PAGE: number
-  SITEURL: string
-}
-
-export type Link = {
-  href: string
-  label: string
-}
+import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  TITLE: 'ampere_exe',
-  DESCRIPTION:
-    'ampere_exe is a blog where you can discover new things!',
-  EMAIL: 'zuhair.emaz@gmail.com',
-  NUM_POSTS_ON_HOMEPAGE: 2,
-  POSTS_PER_PAGE: 4,
-  SITEURL: 'https://ampere-exe.netlify.app/',
+  title: 'astro-erudite',
+  description:
+    'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
+  href: 'https://astro-erudite.vercel.app',
+  author: 'jktrn',
+  locale: 'en-US',
+  featuredPostCount: 2,
+  postsPerPage: 3,
 }
 
-export const NAV_LINKS: Link[] = [
-  { href: '/blog', label: 'blog' },
-  { href: '/projects', label: 'projects' },
-  { href: '/tags', label: 'tags' },
+export const NAV_LINKS: SocialLink[] = [
+  {
+    href: '/',
+    label: 'home',
+  },
+  {
+    href: '/blog',
+    label: 'blog',
+  },
 ]
 
-export const SOCIAL_LINKS: Link[] = [
-  { href: 'https://github.com/ampere-exe', label: 'GitHub' },
-  { href: 'zuhair.emaz@gmail.com', label: 'Email' },
-  { href: '/rss.xml', label: 'RSS' },
+export const SOCIAL_LINKS: SocialLink[] = [
+  {
+    href: 'https://github.com/jktrn',
+    label: 'GitHub',
+  },
+  {
+    href: 'https://twitter.com/enscry',
+    label: 'Twitter',
+  },
+  {
+    href: 'mailto:jason@enscribe.dev',
+    label: 'Email',
+  },
+  {
+    href: '/rss.xml',
+    label: 'RSS',
+  },
 ]
+
+export const ICON_MAP: IconMap = {
+  Website: 'lucide:globe',
+  GitHub: 'lucide:github',
+  LinkedIn: 'lucide:linkedin',
+  Twitter: 'lucide:twitter',
+  Email: 'lucide:mail',
+  RSS: 'lucide:rss',
+}

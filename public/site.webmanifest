@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "erudite",
   "short_name": "erudite",
   "icons": [
@@ -17,3 +18,25 @@
   "background_color": "#121212",
   "display": "standalone"
 }
+=======
+  "name": "astro-erudite",
+  "short_name": "astro-erudite",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
+  "display": "standalone"
+}
+>>>>>>> upstream/main

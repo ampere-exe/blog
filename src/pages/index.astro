@@ -1,93 +1,87 @@
 ---
 import BlogCard from '@/components/BlogCard.astro'
-import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
-import AvatarComponent from '@/components/ui/avatar'
+import PageHead from '@/components/PageHead.astro'
 import { buttonVariants } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
-import { cn } from '@/lib/utils'
-import { getCollection } from 'astro:content'
+import { getRecentPosts } from '@/lib/data-utils'
 
-// Fetch both blog and projects collections
-const blogPosts = await getCollection('blog')
-const projectPosts = await getCollection('projects')
-
-// Combine the posts arrays and sort them by date (newest first)
-const posts = [...blogPosts, ...projectPosts]
-  .filter((post: any) => !post.data.draft)
-  .sort((a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
-
-// If you have a combined route for all posts, set it here.
-// Otherwise, you might need to decide which one to link to.
-const baseUrl = '/blog'
+const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
-<Layout title="Home" description={SITE.DESCRIPTION}>
-  <Container class="flex flex-col gap-y-6">
-    <section>
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-3xl">About Me</CardTitle>
-          <AvatarComponent
-            client:load
-            src="/Chakarov.png"
-            alt="Avatar"
-            className={cn('size-32 rounded-md')}
-          />
-          <CardDescription>
-            <span class="text-xs">
-              Source: Ironmind Highlight of Weightlifter Ivan Chakarov at the 1993 Worlds.
-            </span>
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p class="mb-2 text-pretty text-sm">
-            Hey, my name is Zuhair Emaz and I'm an aspiring engineer from
-            Canada. I also go by my alias ampere_exe.
-          </p>
-          <p class="mb-2 text-pretty text-sm">
-            Outside of that, i'm a strength athlete who likes reading, playing video games (sometimes), 
-            programming, writing, and cooking.
-          </p>
-          <p class="mb-2 text-pretty text-sm">This blog is mainly for me to document my own thoughts and ideas. Feel free to linger around.</p>
-          <span class="text-xs">
-            Note: This blog was created with the help of <span><a class="underline" href="https://github.com/jktrn/astro-erudite">jktrn</a></span>
-            who designed this open source template. Go check him out if you can.
-          </span>
-        </CardContent>
-      </Card>
-    </section>
-    <section class="flex flex-col gap-y-4">
-      <h2 class="text-2xl font-bold">Latest posts</h2>
-      <ul class="not-prose flex flex-col gap-y-4">
-        {
-          posts.map((post: any) => (
-            <li>
-              <BlogCard entry={post} />
-            </li>
-          ))
-        }
-      </ul>
-      <div class="flex justify-center">
-        <Link
-          href={baseUrl}
-          class={buttonVariants({ variant: 'ghost' }) + ' group'}
-        >
-          See all posts <span
-            class="ml-1.5 transition-transform group-hover:translate-x-1"
-            >&rarr;</span
-          >
-        </Link>
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="Home" />
+  <section>
+    <div class="rounded-lg border">
+      <div class="flex flex-col space-y-1.5 p-6">
+        <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
+        <p class="text-muted-foreground text-sm">
+          /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
+        </p>
       </div>
-    </section>
-  </Container>
+      <div class="p-6 pt-0">
+        <p class="text-muted-foreground mb-2 text-sm">
+          astro-erudite is an opinionated, unstyled static blogging template
+          built with <Link
+            href="https://astro.build"
+            class="text-foreground"
+            external
+            underline>Astro</Link
+          >, <Link
+            href="https://tailwindcss.com"
+            class="text-foreground"
+            external
+            underline>Tailwind</Link
+          >, and <Link
+            href="https://ui.shadcn.com"
+            class="text-foreground"
+            external
+            underline>shadcn/ui</Link
+          >. Extraordinarily loosely based on the <Link
+            href="https://astro-micro.vercel.app/"
+            class="text-foreground"
+            external
+            underline>Astro Micro</Link
+          > theme.
+        </p>
+        <p class="text-muted-foreground text-sm">
+          To use this template, check out the <Link
+            href="https://github.com/jktrn/astro-erudite"
+            class="text-foreground"
+            underline
+            external>GitHub</Link
+          > repository. To learn more about why this template exists, read this blog
+          post: <Link
+            href="/blog/the-state-of-static-blogs"
+            class="text-foreground"
+            underline>The State of Static Blogs in 2024</Link
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col gap-y-4">
+    <h2 class="text-2xl font-medium">Latest posts</h2>
+    <ul class="flex flex-col gap-y-4">
+      {
+        blog.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({ variant: 'ghost' }) + ' group'}
+      >
+        See all posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div>
+  </section>
 </Layout>
